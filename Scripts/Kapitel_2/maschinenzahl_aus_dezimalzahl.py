@@ -1,72 +1,48 @@
-def machine_number(value, exponent=8, mantissa=23):
-    # Vorzeichen berechnen
-    if value > 0:
+import math
+
+def machine_number_0m(val, exp_bits, man_bits):
+    if val == 0:
         sign = "0"
-    else:
-        sign = "1"
+        exponent = "0" * exp_bits
+        mantissa = "0" * man_bits
+        result = f"|{sign}|{exponent}|{mantissa}|"
+        return sign, exponent, mantissa, result
 
-    # Bias berechnen
-    bias = 2 ** (exponent - 1) - 1
+    sign = "1" if val < 0 else "0"
+    bias = (1 << (exp_bits - 1)) - 1
 
-    # Vorkommastellen berechnen
-    integerValue = abs(int(value))
-    binaryIntegerValue = bin(integerValue)[2:]
+    m, e = math.frexp(abs(val))
 
-    # Exponent berechnen
-    binaryIntegerValueExponent = len(binaryIntegerValue) - 1
+    E = e + bias
+    if E <= 0 or E >= (1 << exp_bits) - 1:
+        raise ValueError("Underflow/Overflow for this format (no subnormals/inf handled).")
 
-    # Nachkommastellen berechnen
-    fractionalValue = abs(value) - abs(integerValue)
-    binaryFractionalValue = convert_fraction_to_binary(fractionalValue)
+    exponent = format(E, f"0{exp_bits}b")
 
-    # Mantisse berechnen
-    mantissaValue = binaryIntegerValue[1:] + binaryFractionalValue
-    correctMantissaLength = mantissaValue[:mantissa]
-    if len(correctMantissaLength) < mantissa:
-        correctMantissaLength = correctMantissaLength + "0" * (
-            mantissa - len(correctMantissaLength)
-        )
-
-    # bias berechnen
-    biasValue = bin(binaryIntegerValueExponent + bias)[2:]
-
-    # Ergebnis als String zusammenfassen
-    strResult = str(
-        "Vorzeichen (0 Positiv, 1 Negative): "
-        + sign
-        + "\n"
-        + "Exponent: "
-        + biasValue
-        + "\n"
-        + "Mantisse inklusive führende 1: 1."
-        + correctMantissaLength
-        + "\n"
-        + "|"
-        + sign
-        + "|"
-        + biasValue
-        + "|"
-        + correctMantissaLength
-        + "|"
-    )
-
-    # Ergebnis
-    return sign, biasValue, correctMantissaLength, strResult
-
-
-def convert_fraction_to_binary(fraction):
-    """Convert the fractional part of a decimal number to binary."""
-    binary = ""
-    while fraction and len(binary) < 64:  # Limit to 64 iterations
-        fraction *= 2
-        if fraction >= 1:
-            binary += "1"
-            fraction -= 1
+    frac = m
+    bits = []
+    for _ in range(man_bits):
+        frac *= 2
+        if frac >= 1:
+            bits.append("1")
+            frac -= 1
         else:
-            binary += "0"
-    return binary
+            bits.append("0")
 
+    mantissa = "".join(bits)
 
-if __name__ == "__main__":
-    result_machine_number = machine_number(value=3.5)
-    print(result_machine_number[3])
+    result = (
+        f"Vorzeichen: {sign}\n"
+        f"Exponent (biased): {exponent}\n"
+        f"Mantisse: 0.{mantissa}\n"
+        f"|{sign}|{exponent}|{mantissa}|"
+    )
+    return sign, exponent, mantissa, result
+
+# ----------------------------------------------------------
+
+value = 2.0
+e_bits = 4
+m_bits = 7
+
+print(machine_number_0m(value, e_bits, m_bits)[3])
