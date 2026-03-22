@@ -2,11 +2,11 @@ import numpy as np
 
 
 def vektor_norm(vektor, norm):
-    norm_symbol = norm
-    if norm == np.inf:
-        norm_symbol = "∞"
+	norm_symbol = norm
+	if norm == np.inf:
+		norm_symbol = "∞"
 
-    return norm_symbol, np.linalg.norm(vektor, norm)
+	return norm_symbol, np.linalg.norm(vektor, norm)
 
 
 ########################################################################################

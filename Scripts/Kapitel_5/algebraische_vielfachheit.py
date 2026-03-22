@@ -4,13 +4,13 @@ import numpy as np
 
 
 def algebraische_vielfachheit(matrix):
-    eigenwerte = np.linalg.eigvals(matrix)
-    eigenwerte = np.round(eigenwerte, 10)
-    eigenwerte = [
-        val.real if np.isclose(val.imag, 0, atol=1e-10) else val for val in eigenwerte
-    ]
+	eigenwerte = np.linalg.eigvals(matrix)
+	eigenwerte = np.round(eigenwerte, 10)
+	eigenwerte = [
+			val.real if np.isclose(val.imag, 0, atol = 1e-10) else val for val in eigenwerte
+	]
 
-    return dict(Counter(eigenwerte))
+	return dict(Counter(eigenwerte))
 
 
 ########################################################################################

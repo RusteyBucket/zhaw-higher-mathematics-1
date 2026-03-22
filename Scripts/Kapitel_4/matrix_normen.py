@@ -2,11 +2,11 @@ import numpy as np
 
 
 def matrix_norm(matrix, norm):
-    norm_symbol = norm
-    if norm == np.inf:
-        norm_symbol = "∞"
+	norm_symbol = norm
+	if norm == np.inf:
+		norm_symbol = "∞"
 
-    return norm_symbol, np.linalg.norm(matrix, norm)
+	return norm_symbol, np.linalg.norm(matrix, norm)
 
 
 ########################################################################################

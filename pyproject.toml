@@ -1,0 +1,29 @@
+[project]
+dependencies = ["pytest", "ruff", "isort", "matplotlib", "numpy", "sympy", "scipy", "scipy-stubs"]
+
+[tool.ruff]
+indent-width = 4
+line-length = 120
+fix = true
+
+[tool.ruff.format]
+indent-style = "tab"
+quote-style = "double"
+skip-magic-trailing-comma = false
+line-ending = "lf"
+docstring-code-format = true
+
+[tool.ruff.lint]
+extend-select = ["TD001", "TD004", "TD006", "FIX002", "I"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.isort]
+group_by_package = true
+multi_line_output = 3
+include_trailing_comma = true
+line_length = 120
+use_parentheses = true
+combine_as_imports = true
+honor_noqa = true

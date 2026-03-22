@@ -1,8 +1,11 @@
+from typing import Any
+
 import numpy as np
 
 
-def inverse(A):
-    return np.linalg.inv(A)
+# noinspection PyShadowingNames
+def inverse(A: np.ndarray[Any, Any]):
+	return np.linalg.inv(A)
 
 
 ########################################################################################

@@ -1,14 +1,16 @@
+from typing import Any
+
 import numpy as np
 
 
-def spektrum(matrix, debug=False):
-    eigenwerte = np.linalg.eigvals(matrix)
+def spektrum(matrix: np.ndarray[Any, Any], debug: bool = False):
+	eigenwerte = np.linalg.eigvals(matrix)
 
-    if debug:
-        print(f"Eigenwerte: {eigenwerte}")
-        print()
+	if debug:
+		print(f"Eigenwerte: {eigenwerte}")
+		print()
 
-    return eigenwerte.size
+	return eigenwerte.size
 
 
 ########################################################################################

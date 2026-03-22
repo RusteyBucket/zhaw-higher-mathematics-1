@@ -1,7 +1,7 @@
 eps = 1.0
 
 while 1.0 + eps != 1.0:
-    eps /= 2.0
+	eps /= 2.0
 
 print("Maschinengenauigkeit (eps) beträgt:", eps)
 
@@ -11,7 +11,7 @@ print("Maschinengenauigkeit (eps) beträgt:", eps)
 q_min = 1.0
 
 while 1.0 + q_min != q_min:
-    q_min *= 2.0
+	q_min *= 2.0
 
 print("Maschinengenauigkeit (q_min) beträgt:", q_min)
 

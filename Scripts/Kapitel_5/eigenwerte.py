@@ -2,7 +2,7 @@ import numpy as np
 
 
 def eigenwerte(A):
-    return np.linalg.eigvals(A)
+	return np.linalg.eigvals(A)
 
 
 ########################################################################################

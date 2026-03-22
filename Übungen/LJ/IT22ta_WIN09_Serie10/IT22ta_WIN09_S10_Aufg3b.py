@@ -1,15 +1,16 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from IT22ta_WIN09_S10_Aufg3a import IT22ta_WIN09_S10_Aufg3a
 from sympy import false, true
+
+from IT22ta_WIN09_S10_Aufg3a import IT22ta_WIN09_S10_Aufg3a
 
 # Aufgabe 3b
 dim = 3000
 A = np.diag(np.diag(np.ones((dim, dim)) * 4000)) + np.ones((dim, dim))
 print(A)
-dum1 = np.arange(1, int(dim / 2 + 1), dtype=np.float64).reshape((int(dim / 2), 1))
-dum2 = np.arange(int(dim / 2), 0, -1, dtype=np.float64).reshape((int(dim / 2), 1))
-x = np.append(dum1, dum2, axis=0)
+dum1 = np.arange(1, int(dim / 2 + 1), dtype = np.float64).reshape((int(dim / 2), 1))
+dum2 = np.arange(int(dim / 2), 0, -1, dtype = np.float64).reshape((int(dim / 2), 1))
+x = np.append(dum1, dum2, axis = 0)
 b = A @ x
 x0 = np.zeros((dim, 1))
 tol = 1e-4
@@ -42,8 +43,8 @@ opt = true
 [xJacobi, _, _] = IT22ta_WIN09_S10_Aufg3a(A, b, x0, tol, true)
 [xGaussSeidel, _, _] = IT22ta_WIN09_S10_Aufg3a(A, b, x0, tol, false)
 plt.figure()
-plt.plot(np.abs(xJacobi - x), label="Jacobi")
-plt.plot(np.abs(xGaussSeidel - x), label="Gauss-Seidel")
+plt.plot(np.abs(xJacobi - x), label = "Jacobi")
+plt.plot(np.abs(xGaussSeidel - x), label = "Gauss-Seidel")
 plt.legend()
 plt.xlabel("Vektor-Element")
 plt.ylabel("Absoluter Fehler")

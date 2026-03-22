@@ -1,5 +1,5 @@
 def anz_verschied_maschinZahlen(basis, mantisse, exponent, vorzeichen_exp):
-    return basis ** (mantisse) * (basis ** (exponent + vorzeichen_exp) - 1) + 1
+	return basis ** (mantisse) * (basis ** (exponent + vorzeichen_exp) - 1) + 1
 
 
 ########################################################################################
@@ -17,5 +17,5 @@ exponent_stellen = 5
 vorzeichen = 1
 
 print(
-    anz_verschied_maschinZahlen(basis, mantisse_stellen, exponent_stellen, vorzeichen)
+		anz_verschied_maschinZahlen(basis, mantisse_stellen, exponent_stellen, vorzeichen),
 )

@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 x = np.arange(0, 100)
-fx = 5 / ((2 * x**2) ** (1 / 3))
+fx = 5 / ((2 * x ** 2) ** (1 / 3))
 plt.loglog(x, fx)
 plt.xlabel("x axis")
 plt.ylabel("y axis")
@@ -13,7 +13,7 @@ plt.grid()
 plt.show()
 
 x = np.arange(0, 100)
-gx = 10**5 * ((2 * np.e) ** ((-x) / 100))
+gx = 10 ** 5 * ((2 * np.e) ** ((-x) / 100))
 plt.semilogy(x, gx)
 plt.xlabel("x axis")
 plt.ylabel("y axis")

@@ -3,16 +3,16 @@ import timeit
 import matplotlib.pyplot as plt
 import numpy as np
 import numpy.linalg as l
-from IT22ta_WIN10_S6_Aufg2 import gaussian_algorithm
 
 # from IT22ta_WIN10_S6_Aufg2_optimized import gaussian_algorithm
 from IT22ta_WIN10_S10_Aufg3a import aufgabe_3_a
+from IT22ta_WIN10_S6_Aufg2 import gaussian_algorithm
 
 dim = 3000
 A = np.diag(np.diag(np.ones((dim, dim)) * 4000)) + np.ones((dim, dim))
-dum_1 = np.arange(1, int(dim / 2 + 1), dtype=np.float64).reshape((int(dim / 2), 1))
-dum_2 = np.arange(int(dim / 2), 0, -1, dtype=np.float64).reshape((int(dim / 2), 1))
-x = np.append(dum_1, dum_2, axis=0)
+dum_1 = np.arange(1, int(dim / 2 + 1), dtype = np.float64).reshape((int(dim / 2), 1))
+dum_2 = np.arange(int(dim / 2), 0, -1, dtype = np.float64).reshape((int(dim / 2), 1))
+x = np.append(dum_1, dum_2, axis = 0)
 b = A @ x
 x_0 = np.zeros((dim, 1))
 tol = 1e-4
@@ -46,9 +46,9 @@ print(f"l.solve: {end - start} s")
 # 0.21959929099830333 s
 
 plt.figure()
-plt.plot(np.abs(gaussian_result - x), label="Gauss")
-plt.plot(np.abs(jacobi_result[0] - x), label="Jacobi")
-plt.plot(np.abs(gauss_seidel_result[0] - x), label="Gauss-Seidel")
+plt.plot(np.abs(gaussian_result - x), label = "Gauss")
+plt.plot(np.abs(jacobi_result[0] - x), label = "Jacobi")
+plt.plot(np.abs(gauss_seidel_result[0] - x), label = "Gauss-Seidel")
 plt.legend()
 plt.xlabel("Vector Element")
 plt.ylabel("Absolute Error")

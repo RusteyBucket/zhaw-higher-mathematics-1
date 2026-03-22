@@ -7,21 +7,21 @@ SEP FS20 Aufgabe 2
 @author: knaa
 """
 
+import matplotlib.pyplot as plt
 # a)
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 def f(x):
-    return x * np.exp(x)
+	return x * np.exp(x)
 
 
 def df(x):
-    return np.exp(x) * (x + 1)
+	return np.exp(x) * (x + 1)
 
 
 def K(x):
-    return np.abs(x) * np.abs(df(x)) / np.abs(f(x))
+	return np.abs(x) * np.abs(df(x)) / np.abs(f(x))
 
 
 # K = abs(x + 1)

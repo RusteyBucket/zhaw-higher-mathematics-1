@@ -2,34 +2,34 @@ import numpy as np
 
 
 def is_diagonal(matrix):
-    # Extract the diagonal elements of the matrix
-    diagonal_elements = np.diag(matrix)
+	# Extract the diagonal elements of the matrix
+	diagonal_elements = np.diag(matrix)
 
-    # Create a new diagonal matrix with the diagonal elements
-    diagonal_matrix = np.diagflat(diagonal_elements)
+	# Create a new diagonal matrix with the diagonal elements
+	diagonal_matrix = np.diagflat(diagonal_elements)
 
-    # Check if the new matrix is equal to the original matrix
-    return np.array_equal(matrix, diagonal_matrix)
+	# Check if the new matrix is equal to the original matrix
+	return np.array_equal(matrix, diagonal_matrix)
 
 
-def ist_diagonalisierbar(A, T, debug: False):
-    D = np.linalg.inv(T) @ A @ T
-    if is_diagonal(D):
-        eigenwerte = np.diag(D)
-        eigenvektoren = []
-        for i in range(T.shape[1]):
-            eigenvektoren.append(T[:, i])
-        if debug:
-            print("D = T^-1 * A * T")
-            print(f"{np.linalg.inv(T)} \n*\n {A} \n*\n {T} \n=\n {D}")
-            print("Eigenwerte: ", eigenwerte)
-            print("Eigenvektoren: ", eigenvektoren)
+def ist_diagonalisierbar(A, T, debug: bool = False):
+	D = np.linalg.inv(T) @ A @ T
+	if is_diagonal(D):
+		eigenwerte = np.diag(D)
+		eigenvektoren = []
+		for i in range(T.shape[1]):
+			eigenvektoren.append(T[:, i])
+		if debug:
+			print("D = T^-1 * A * T")
+			print(f"{np.linalg.inv(T)} \n*\n {A} \n*\n {T} \n=\n {D}")
+			print("Eigenwerte: ", eigenwerte)
+			print("Eigenvektoren: ", eigenvektoren)
 
-        print("Die Matrix ist diagonalisierbar")
-    else:
-        print("Die Matrix ist nicht diagonalisierbar")
+		print("Die Matrix ist diagonalisierbar")
+	else:
+		print("Die Matrix ist nicht diagonalisierbar")
 
-    return eigenwerte, eigenvektoren
+	return eigenwerte, eigenvektoren
 
 
 ########################################################################################

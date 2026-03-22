@@ -39,7 +39,7 @@ i=2,j=3 =
          240         120          80        3080
            0         150         150        3300
            0           0         420        2940
-Rückwärts einsetzen ergiebt: x1 = 3, x2=15, x3=7
+Rückwärts einsetzen ergibt: x1 = 3, x2=15, x3=7
 
 c) Relativer und Absoluter Fehler
  || x - x~|| <= || A^-1 ||*||b-b~|| in inf norm == 0.0113*609 == 6.8875

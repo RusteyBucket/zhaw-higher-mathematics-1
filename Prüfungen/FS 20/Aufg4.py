@@ -13,7 +13,6 @@ import numpy as np
 A = np.array([[15, 0, 1], [1, 3, 7], [0, 1, 6]])
 y = np.array([[21, 67, 44]]).T
 
-
 """ 
 Die 1. und 2. Zeile müssen vertauscht werden, da ansonsten ein
 Diagonal-Element 0 ist und die Diagonaldominanz nicht mehr gegeben ist ! 
@@ -28,9 +27,8 @@ L = np.tril(A) - D
 x = np.array([[0, 0, 0]]).T
 
 for k in np.arange(1, 7):
-    x = -np.linalg.inv(D + L) @ R @ x + np.linalg.inv(D + L) @ y
-    print(x)
-
+	x = -np.linalg.inv(D + L) @ R @ x + np.linalg.inv(D + L) @ y
+	print(x)
 
 # Aufgaben c)
 

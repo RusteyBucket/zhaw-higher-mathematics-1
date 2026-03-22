@@ -15,10 +15,8 @@ epsilon = 6.56583
 normA = 3
 disNormA = 3 * 10 ** (-7)
 exponent = 1
-while (60003 / (1 - (condA * relA))) * (
-    ((disNormA) / 3) + ((epsilon * 10 ** (-exponent)) / 1)
-) > 0.01:
-    exponent += 1
+while (60003 / (1 - (condA * relA))) * (((disNormA) / 3) + ((epsilon * 10 ** (-exponent)) / 1)) > 0.01:
+	exponent += 1
 
 print(exponent)
 # Der relative Fehler beträgt 6.56583 * 10^(-8)

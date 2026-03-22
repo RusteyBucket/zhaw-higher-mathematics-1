@@ -3,25 +3,25 @@ import numpy.linalg as l
 
 
 def serie_9(A, A_tilde, b, b_tilde):
-    x = np.linalg.solve(A, b)
-    x_tilde = np.linalg.solve(A_tilde, b_tilde)
+	x = np.linalg.solve(A, b)
+	x_tilde = np.linalg.solve(A_tilde, b_tilde)
 
-    dx_max = np.nan
-    if l.cond(A, np.inf) * (l.norm((A - A_tilde), np.inf) / l.norm(A, np.inf)) < 1:
-        dx_max = (
-            l.cond(A, np.inf)
-            / (
-                1
-                - l.cond(A, np.inf) * l.norm((A - A_tilde), np.inf) / l.norm(A, np.inf)
-            )
-        ) * (
-            l.norm((A - A_tilde), np.inf) / l.norm(A, np.inf)
-            + l.norm((b - b_tilde), np.inf) / l.norm(b, np.inf)
-        )
+	dx_max = np.nan
+	if l.cond(A, np.inf) * (l.norm((A - A_tilde), np.inf) / l.norm(A, np.inf)) < 1:
+		dx_max = (
+				         l.cond(A, np.inf)
+				         / (
+						         1
+						         - l.cond(A, np.inf) * l.norm((A - A_tilde), np.inf) / l.norm(A, np.inf)
+				         )
+		         ) * (
+				         l.norm((A - A_tilde), np.inf) / l.norm(A, np.inf)
+				         + l.norm((b - b_tilde), np.inf) / l.norm(b, np.inf)
+		         )
 
-    dx_obs = (l.norm(x - x_tilde, np.inf)) / (l.norm(x, np.inf))
+	dx_obs = (l.norm(x - x_tilde, np.inf)) / (l.norm(x, np.inf))
 
-    return (x, x_tilde, dx_max, dx_obs)
+	return (x, x_tilde, dx_max, dx_obs)
 
 
 A = np.array([[20, 30, 10], [10, 17, 6], [2, 3, 2]])

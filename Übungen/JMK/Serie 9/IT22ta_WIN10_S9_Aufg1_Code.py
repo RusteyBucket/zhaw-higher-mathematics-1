@@ -9,12 +9,11 @@ xTilde = l.solve(A, bTilde)
 
 print(l.norm(x - xTilde, np.inf) / l.norm(x, np.inf))
 
-
 exponent = 1
 while (60003 / (1 - (60003 * 10 ** (-7)))) * (
-    ((3 * 10 ** (-7)) / 3) + ((6.56583 * 10 ** (-exponent)) / 1)
+		((3 * 10 ** (-7)) / 3) + ((6.56583 * 10 ** (-exponent)) / 1)
 ) > 0.01:
-    exponent += 1
+	exponent += 1
 
 print(exponent)
 # e (epsilon) must not exceed 6.56583 * 10^(-8)

@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+
 from IT22ta_WIN09_S6_Aufg2 import obereDreiecksMatrix
 
 # Aufgabe 3

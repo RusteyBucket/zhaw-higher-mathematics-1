@@ -19,5 +19,5 @@ print(A[3, :] * (B[:, 1]))
 
 # Aufgabe 1 c)
 print("Aufgabe 1 c)")
-print(np.sum(A, axis=0))
-print(np.sum(B, axis=1))
+print(np.sum(A, axis = 0))
+print(np.sum(B, axis = 1))

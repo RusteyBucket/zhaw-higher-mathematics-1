@@ -22,5 +22,3 @@
 # Iterative Lösung:  [1.073 0.293 0.097 0.097 0.293 1.073]
 # Genauigkeit a posteriori:  8.487701416015625e-05
 # Genauigkeit tatsächlich:  6.78039178615697e-05
-
-

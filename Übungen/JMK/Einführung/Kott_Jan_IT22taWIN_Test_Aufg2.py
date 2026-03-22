@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Abbildung 1
 x = np.arange(-5, 5, 0.05)
@@ -14,7 +14,7 @@ plt.show()
 
 # Abbildung 2
 x2 = np.arange(-10, 10, 0.1)
-f2 = x2**5 + 3 * x2**4 + 3 * x2**2 + x2 + 1
+f2 = x2 ** 5 + 3 * x2 ** 4 + 3 * x2 ** 2 + x2 + 1
 plt.figure()
 plt.plot(x2, f2)
 plt.xlabel("x axis")

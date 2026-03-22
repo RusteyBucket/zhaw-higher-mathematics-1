@@ -1,8 +1,8 @@
 from sympy import simplify
 
 
-def funktion_vereinfachen(funktion):
-    return simplify(funktion)
+def funktion_vereinfachen(funktion: str):
+	return simplify(funktion)
 
 
 ########################################################################################

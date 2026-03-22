@@ -28,7 +28,7 @@ import numpy as np
 
 
 def K(x):
-    return np.abs((2 * np.sin(x) + x * np.cos(x)) / np.sin(x))
+	return np.abs((2 * np.sin(x) + x * np.cos(x)) / np.sin(x))
 
 
 x0 = np.pi / 3
@@ -40,7 +40,7 @@ print(x0_err_abs)
 
 # TEILAUFGABE c)
 
-print([K(10**-n) for n in range(1, 6)])
+print([K(10 ** -n) for n in range(1, 6)])
 # [2.9966644423259243,
 #  2.999966666444442,
 #  2.999999666666645,
@@ -53,11 +53,11 @@ print([K(10**-n) for n in range(1, 6)])
 
 # TEILAUFGABE d)
 
-x = np.arange(-2 * np.pi, 3 * np.pi, 10**-4)
+x = np.arange(-2 * np.pi, 3 * np.pi, 10 ** -4)
 plt.semilogy(x, K(x))
 plt.xlabel("x")
 plt.ylabel("K(x)")
-plt.grid()  #   2 P
+plt.grid()  # 2 P
 
 # Der Plot zeigt, dass f(x) fuer x in der Umgebung von +/- pi,
 # +/- 2*pi, +/- 3*pi, usw. schlecht konditioniert ist.

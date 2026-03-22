@@ -2,22 +2,22 @@ import numpy as np
 
 
 def g(x):
-    return np.exp(x)
+	return np.exp(x)
 
 
 def h(x):
-    return np.sqrt(x) + 2
+	return np.sqrt(x) + 2
 
 
 # a) 5P
 
 
 def f(x):
-    return g(x) - h(x)
+	return g(x) - h(x)
 
 
 def df(x):
-    return np.exp(x) - 0.5 / np.sqrt(x)
+	return np.exp(x) - 0.5 / np.sqrt(x)
 
 
 x0 = 0.5
@@ -25,11 +25,13 @@ tol = 1e-7
 err = 1 + tol
 niter = 0
 while err > tol:
-    x1 = x0 - f(x0) / df(x0)
-    err = np.abs(x1 - x0)
-    x0 = x1
-    niter += 1
+	x1 = x0 - f(x0) / df(x0)
+	err = np.abs(x1 - x0)
+	x0 = x1
+	niter += 1
 print("Schnittpunkt=", x0, ", niter=", niter)
+
+
 # Schnittpunkt= 1.1174679154114777
 
 # b) 5P
@@ -38,7 +40,7 @@ print("Schnittpunkt=", x0, ", niter=", niter)
 # 1.
 # exp(x) = sqrt(x) + 2 => x = ln(sqrt(x) + 2) =: F(x)
 def F(x):
-    return np.log(np.sqrt(x) + 2)
+	return np.log(np.sqrt(x) + 2)
 
 
 # 2. F(x) ist monoton zunehmende Funktion

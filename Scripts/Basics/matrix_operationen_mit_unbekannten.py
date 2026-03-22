@@ -14,10 +14,10 @@ C = A + B
 
 # Zeigen Sie das Ergebnis an
 if C.shape[0] == 1 or C.shape[1] == 1:
-    # Es ist ein Vektor
-    print("Vektor:")
-    print(C)
+	# Es ist ein Vektor
+	print("Vektor:")
+	print(C)
 else:
-    # Es ist eine Matrix
-    print("Matrix:")
-    print(C)
+	# Es ist eine Matrix
+	print("Matrix:")
+	print(C)

@@ -1,22 +1,24 @@
 from sympy import diff, integrate, sympify
 
 
-def ableiten(funktion, symbol=None):
-    funktion = sympify(funktion)
+# noinspection PyShadowingNames
+def ableiten(funktion: str, symbol = None):
+	funktion = sympify(funktion)
 
-    if symbol is None:
-        return diff(funktion)
+	if symbol is None:
+		return diff(funktion)
 
-    return diff(funktion, symbol)
+	return diff(funktion, symbol)
 
 
-def integrieren(funktion, symbol=None):
-    funktion = sympify(funktion)
+# noinspection PyShadowingNames
+def integrieren(funktion: str, symbol = None):
+	funktion = sympify(funktion)
 
-    if symbol is None:
-        return integrate(funktion)
+	if symbol is None:
+		return integrate(funktion)
 
-    return integrate(funktion, symbol)
+	return integrate(funktion, symbol)
 
 
 ########################################################################################
@@ -31,5 +33,5 @@ print(f"Ableitung: {ableiten(funktion)}")
 # Werte für Unbekannte definieren
 # werte = {"x": 0.8}
 
-# print(f"Ergebniss von Ableitung: {ableiten(funktion).subs(werte).evalf()}")
-# print(f"Ergebniss von Funktion: {sympify(funktion).subs(werte).evalf()}")
+# print(f"Ergebnis von Ableitung: {ableiten(funktion).subs(werte).evalf()}")
+# print(f"Ergebnis von Funktion: {sympify(funktion).subs(werte).evalf()}")

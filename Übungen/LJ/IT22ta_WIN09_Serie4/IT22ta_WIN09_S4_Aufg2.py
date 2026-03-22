@@ -1,5 +1,6 @@
 import numpy as np
 
+
 # Aufgabe 2
 # a)
 # Anziehende Fixpunkte für die folgenden Input-Werte mit 100 Iterationen:
@@ -20,18 +21,18 @@ import numpy as np
 
 
 def K(alpha, k):
-    return alpha * k * (1 - k)
+	return alpha * k * (1 - k)
 
 
 def fixpunkt(alpha, k, loop):
-    if loop > 0:
-        print("{}: {}".format(alpha, K(alpha, k)))
-        fixpunkt(alpha, K(alpha, k), loop - 1)
+	if loop > 0:
+		print("{}: {}".format(alpha, K(alpha, k)))
+		fixpunkt(alpha, K(alpha, k), loop - 1)
 
 
 k0 = 0.1
 alpahrange = np.arange(0, 4.1, 0.5)
 
 for x in alpahrange:
-    fixpunkt(x, k0, 100)
-    print("-------")
+	fixpunkt(x, k0, 100)
+	print("-------")

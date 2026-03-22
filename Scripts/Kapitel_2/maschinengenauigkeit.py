@@ -1,5 +1,5 @@
 def maschinengenauigkeit(basis, mantisse_stellen):
-    return (basis / 2) * basis ** (-mantisse_stellen)
+	return (basis / 2) * basis ** (-mantisse_stellen)
 
 
 ########################################################################################
